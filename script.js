@@ -22,9 +22,17 @@ var fullFunctionInput = "newnavigate('%s', event)";
 // Delete cookie
 document.cookie = "wkpr=null; expires=0; domain=.telegraaf.nl; path=/";
 
+// PageContent Articles
 for (i = 0; i < premium.length; i++) {
 	if(!premium[i].hasAttribute('onclick')) continue;
 
 	var url = premium[i].getAttribute('onclick').substr(13,(premium[i].getAttribute('onclick').length-23));
 	premium[i].setAttribute('onclick', sprintf(fullFunctionInput, url+productPromotion)); 
+}
+
+// Sidebar Articles
+var sidebar = $('li.premiumcontent > a');
+
+for (i = 0; i < sidebar.length; i++) {
+	sidebar[i].href += productPromotion;
 }

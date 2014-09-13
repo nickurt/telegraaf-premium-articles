@@ -36,3 +36,12 @@ var sidebar = $('li.premiumcontent > a');
 for (i = 0; i < sidebar.length; i++) {
 	sidebar[i].href += productPromotion;
 }
+
+// Search Articles
+var searchArticles = $('div.premiumcontent').parent();
+
+for (i = 0; i < searchArticles.length; i++) {
+	if(!searchArticles[i].hasAttribute('href')) continue;
+
+	searchArticles[i].href += productPromotion;
+}
